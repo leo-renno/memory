@@ -1,0 +1,87 @@
+* { /*resetar a padronização prévia da página web*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*importante para que as formatações internas não aumentem o tamanho definido da caixa <main> */
+}
+
+body {
+  background-color: #000000;
+  min-height: 100vh; /* este atributo e o seguinte, width, servem para criar um ponto de referência para que o elemento <main> seja posicionado*/
+  width: 100%;
+  display: flex; /*serve para que todos os elementos-child do <main> se comportem como box */
+  justify-content:center;
+  align-items: center;
+  font-family: "Roboto", sans-serif; /*adiciona a fonte linkada no arquivo html. Notar que o nome da fonte deve ser igual ao nome que aparece no link do arquivo html e colocada entre aspas*/
+}
+
+.stats { /* formatações do elemento "status do jogo"*/
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.game-container { /*lembrar que o elemento <main> é o pai do elemento-child <header>*/
+  min-width: 544px; /*um bug ocorreu no jogo, por termos apenas definido um tamanho mínimo. Com isso, a certa altura o board começava a aumenta. Para isso, é preciso também estabelecer um limite*/
+  max-width: 544px; /*limite estabelecido, para a correção do bug*/
+}
+
+.game-header {
+  display:flex; /*faz com que seus filhos - <img> e <span> - se comportem como caixas*/
+  justify-content: space-between; /*com esta propriedade, cada elemento fica de um lado*/
+  align-items: center; /*esta propriedade faz com que o texto, que estava alinhado top seja alinhado no centro */
+  margin-bottom: 32px; /*serve para afastar o elemento <header> do elemento <div class=cards-grid">*/
+}
+
+.cards-grid { /*referente ao tabuleiro, onde as cartas ficarão.*/
+  width: 100%;
+  display: flex; /*por padrão, o elemento <div class="card" vai aparecer empilhado, as 4 cartas uma encima da outra. O valor flex do atributo display fará com que as cartas apareçam ao lado umas das outras*/
+  flex-wrap: wrap; /*cria uma segunda linha de elementos, jogando algumas cartas para a próxima linha*/
+  gap: 5px; /*adiciona um espaço entre os elementos*/
+  
+}
+
+.card { /*referente às cartas*/
+  width: calc(25% - 5px); /* 25% = 1/4 da largura total do cards-grid, que é de 100%. Já o atributo "calc" serve para descontar dos 25% os 5px de gap entre cada carta*/
+  aspect-ratio: 1; /*este atributo subtitui o height: 50px, para que as dimensões de cada caixa se ajustem automaticamente*/
+  background-color: #8234e0;
+  border: 2px solid #5a0caf;
+  border-radius: 12px;
+  background-image: url(./assets/lines.svg); /*aplica uma imagem de fundo em cada carta*/
+  display: flex; /*propriedade referente ao emoji*/
+  justify-content: center; /*propriedade referente ao emoji*/
+  align-items: center; /*propriedade referente ao emoji*/
+  cursor: pointer; /* fazer aparecer o ícone cursor sobre as cartas*/
+}
+
+.revealed {
+  background-color: #ffffff;
+  border-color: #dadada;
+  cursor: not-allowed; /*altera o cursor quando a carta já estiver virada e não puder ser mais escolhida*/
+}
+
+.card-emoji {
+  font-size: 40px;
+  display: none; /*serve para ocultar o emoji enquanto a carta não for escolhida*/
+}
+
+.revealed .card-emoji {
+  display: block;
+}
+
+.button {
+  width: 100%;
+  height: 52px;
+  background-color: #8234e9;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 7px;
+  border: 2px solid #5a0caf;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif; /*é necesssário adicionar novamente a fonta escolhida*/
+  transition: background-color 0.3s; /*serve para suavizar a mudança de cor do fundo no hover*/
+  margin-top: 32px; /*para afastar o elemento <button> do elemento <div class=cards-grid>*/
+}
+
+.button:hover {
+  background-color: #7029d6;
+}

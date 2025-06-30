@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Estas três linhas de código adicionam a fonte escolhida no google fonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg" href="./assets/logo.svg"> <!--linka o logo ao projeto-->
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Memory</title>
+</head>
+<body>
+  <main class="game-container">
+    <header class="game-header">
+      <img src="./assets/logo.svg" alt="Logo do jogo">
+      <span id="stats" class="stats">0 acertos de 0 tentativas</span>
+    </header>
+    <div id="deck" class="cards-grid"></div> <!--As 16 divs das cartas que foram criadas aqui dentro foram apagadas, para que as cartas sejam renderizadas dinamicamente a partir do ARRAY de cartas criado no arquivo scripst.js-->
+
+    <button id="restart" class="button">Reiniciar</button>
+  </main>
+
+  <script src="scripts.js"></script> <!--Link para o arquivo javascript-->
+</body>
+</html>
