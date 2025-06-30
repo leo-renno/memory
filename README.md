@@ -3,14 +3,14 @@
 ### 🎮 Preview
 
 ![Preview do Jogo](./assets/preview.png)
-Bem-vindo ao **Jogo da Memória**, um projeto interativo e divertido criado utilizando apenas **HTML**, **CSS** e **JavaScript** puro. Teste sua memória combinando pares de cartas no menor tempo possível!
+Bem-vinda(o) ao **Jogo da Memória**, um projeto interativo e divertido criado utilizando apenas **HTML**, **CSS** e **JavaScript** puro. Teste sua memória combinando pares de cartas no menor tempo possível!
 
-🔗 [Acesse o jogo agora no GitHub Pages](https://seuusuario.github.io/nome-do-repositorio/)
+🔗 [Acesse o jogo agora no GitHub Pages](https://leo-renno.github.io/memory/)
 
 ---
 
 ### 🕹 Como jogar
-1. lique nas cartas para revelá-las.
+1. Clique nas cartas para revelá-las.
 2. Encontre os pares.
 3. Tente completar o jogo com o menor número de tentativas possível!
 
